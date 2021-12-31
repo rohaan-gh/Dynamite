@@ -1,3 +1,14 @@
 # Dynamite
-"Dynamite" is an all-in-one tool which can perform a whois lookup, track an ip and scan for vulnerabilities in any website.
 Not Available on termux. 
+## Installation:
+<br />
+○ git clone https://github.com/rohaan-gh/Dynamite
+<br />
+<br />
+○ cd Dynamite
+<br />
+<br /> 
+○ sudo ./install.sh
+<br /> 
+<br />
+○ ./dynamite
