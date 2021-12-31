@@ -1,0 +1,160 @@
+#!/bin/bash
+
+#Coded by @rohaan-gh
+
+clear 
+
+#Colors 
+
+red="\e[0;91m"
+blue="\e[0;94m"
+green="\e[0;92m"
+bold="\e[1m"
+uline="\e[4m"
+reset="\e[0m"
+
+#Variables:
+#IP Info
+whoisl='clear 
+printf "\e[0;91m"
+echo -n " 
+          Enter IP or Domain : "
+         read whoislookup
+printf "\e[0m"
+printf "\e[0;92m"
+whois $whoislookup
+printf "\e[0m" 
+printf " \e[1m \e[4m
+         Thanks for using,
+         Follow me on Github for more"         
+printf "\e[0m"'
+#IP Tracker
+iptracker='clear 
+printf " \e[0;91m "
+echo -n " 
+            Enter IP : "
+        read trackip
+clear
+#MAIN
+gip=$(curl http://ip-api.com/json/$trackip -s)
+status=$(echo $gip | jq '.status' -r) 
+country=$(echo $gip | jq '.country' -r)
+countrycode=$(echo $gip | jq '.countryCode' -r)
+region=$(echo $gip | jq '.regionName' -r)
+city=$(echo $gip | jq '.city' -r)
+zip=$(echo $gip | jq '.zip' -r)
+latitude=$(echo $gip | jq '.lat' -r)
+longitude=$(echo $gip | jq '.lon' -r)
+timezone=$(echo $gip | jq '.timezone' -r)
+query=$(echo $gip | jq '.query' -r)
+if [[ $status == "success" ]]; then
+printf "  \e[1m 
+Result       : Success
+\e[0m \e[0;91m                
+Country      : $country
+
+Country Code : $countrycode
+
+Region       : $region
+
+City         : $city
+
+Zip Code     : $zip
+
+Latitude     : $latitude 
+
+Longitude    : $longitude
+
+Time Zone    : $timezone
+
+Query        : $query"
+else 
+echo "       
+         
+         
+         
+         
+         
+         Invalid IP"
+fi'
+#Vulnerability Scan
+vscan='clear
+echo -n "
+             Target : "
+    read target
+nikto -h $target 
+printf "\e[0m" 
+printf " \e[1m \e[4m
+         Thanks for using,
+         Follow me on Github for more"         
+
+sleep 3 
+./dynamite
+fi'
+
+#Banner of Script
+
+printf " \e[0;91m \e[1m 
+              
+
+ /DDDDDDD  /YY     /YY /NN   /NN  /AAAAAA  /MM      /MM /IIIIII /TTTTTTTT /EEEEEEEE
+| DD__  DD|  YY   /YY/| NNN | NN /AA__  AA| MMM    /MMM|_  II_/|__  TT__/| EE_____/
+| DD  \ DD \  YY /YY/ | NNNN| NN| AA  \ AA| MMMM  /MMMM  | II     | TT   | EE      
+| DD  | DD  \  YYYY/  | NN NN NN| AAAAAAAA| MM MM/MM MM  | II     | TT   | EEEEE   
+| DD  | DD   \  YY/   | NN  NNNN| AA__  AA| MM  MMM| MM  | II     | TT   | EE__/   
+| DD  | DD    | YY    | NN\  NNN| AA  | AA| MM\  M | MM  | II     | TT   | EE      
+| DDDDDDD/    | YY    | NN \  NN| AA  | AA| MM \/  | MM /IIIIII   | TT   | EEEEEEEE
+|_______/     |__/    |__/  \__/|__/  |__/|__/     |__/|______/   |__/   |________/ \e[0m"
+                                                                               
+            
+printf " \e[0;91m                                                                                 
+
+         
+        [1] Whois Lookup                                                                        
+        [2] IP Tracker
+        [3] Vulnerability Scan 
+            Ctrl + c (to exit)"
+echo -n "
+            
+            
+            Select an option : "                    
+read option          
+if [[ $option == 1 ]]; then
+bash -c "$whoisl"
+elif [[ $option == 2 ]]; then
+bash -c "$iptracker"
+elif [[ $option == 3 ]]; then
+bash -c "$vscan"
+else 
+printf "    
+           Select a valid option"
+sleep 3
+./dynamite
+fi
+
+#Ending
+printf "\e[0;91m"
+echo    "  
+        
+         
+         
+         
+         
+         
+         
+        [1]Go Back
+        [2]Exit"
+echo -n "
+         
+        Select an option : "
+read option2
+if [[ $option2 == 1 ]]; then
+./dynamite
+elif [[ $option2 == 2 ]]; then
+exit
+else 
+echo " 
+         Invalid option"
+sleep 2
+exit 
+fi
