@@ -11,7 +11,7 @@ Not Available on termux.
 ○ sudo ./install.sh
 <br /> 
 <br />
-chmod +x dynamite
+○ chmod +x dynamite
 <br />
 <br />
 ○ ./dynamite
