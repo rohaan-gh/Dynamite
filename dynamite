@@ -79,19 +79,47 @@ echo "
 fi'
 #Vulnerability Scan
 vscan='clear
+echo   "
+        [1]Nikto
+        [2]WPScan
+        [3]Uniscan
+        [4]Use all"
 echo -n "
-             Target : "
-    read target
-nikto -h $target 
-printf "\e[0m" 
+        Select an option : "
+    read option3
+if [[ $option3 == 1 ]]; then 
+echo -n "
+        Enter Url : " 
+        read nikto
+nikto -h $nikto
+elif [[ $option3 == 2 ]]; then
+echo -n "
+        Enter Url : "
+        read wpscan
+wpscan --url $wpscan
+elif [[ $option3 == 3 ]]; then
+echo -n "
+        Enter Url : "
+        read uniscan
+sudo uniscan -d -s -u $uniscan
+elif [[ $option3 == 4 ]]; then
+echo -n "
+        Enter Url : "
+read useall
+printf "\e[1m
+       It may take some time...(Ctrl+c to stop)\e[0m \e[0;91m" 
+wpscan --url $useall
+uniscan -d -s -u $useall
+nikto -h $useall
+else
+printf "\e[1m
+         Invalid option"
+sleep 2
+./dynamite
+fi
 printf " \e[1m \e[4m
          Thanks for using,
-         Follow me on Github for more"         
-
-sleep 3 
-./dynamite
-fi'
-
+         Follow me on Github for more"' 
 #Banner of Script
 
 printf " \e[0;91m \e[1m 
@@ -128,7 +156,7 @@ bash -c "$vscan"
 else 
 printf "    
            Select a valid option"
-sleep 3
+sleep 2
 ./dynamite
 fi
 
