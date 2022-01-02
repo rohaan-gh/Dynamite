@@ -14,4 +14,4 @@ Not Available on termux.
 ○ chmod +x dynamite
 <br />
 <br />
-○ ./dynamite
+○ sudo ./dynamite
