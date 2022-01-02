@@ -1,5 +1,9 @@
 # Dynamite
-Not Available on termux. 
+Not Available on Termux
+<br />
+Updated on 1/2/2022
+<br />
+Added Uniscan And WPScan
 ## Installation:
 <br />
 ○ git clone https://github.com/rohaan-gh/Dynamite
